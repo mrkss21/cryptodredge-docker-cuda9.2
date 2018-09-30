@@ -14,9 +14,9 @@ RUN chown miner:miner /home/miner/run-miner.sh
 USER miner
 
 RUN mkdir /home/miner/cryptodredge \
-    && wget "https://github.com/technobyl/CryptoDredge/releases/download/v0.9.2/CryptoDredge_0.9.2_cuda_10.0_linux.tar.gz" -O /home/miner/miner.tar.gz \
+    && wget "https://github.com/technobyl/CryptoDredge/releases/download/v0.9.1/CryptoDredge_0.9.1_cuda_9.1_linux.tar.gz" -O /home/miner/miner.tar.gz \
     && tar xvf /home/miner/miner.tar.gz -C /home/miner/ \
-    && chmod 0755 /home/miner && chmod 0755 /home/miner/CryptoDredge_0.9.2 \
+    && chmod 0755 /home/miner && chmod 0755 /home/miner/CryptoDredge_0.9.1 \
     && rm /home/miner/miner.tar.gz
     
 ENV ALGO lyra2v2
