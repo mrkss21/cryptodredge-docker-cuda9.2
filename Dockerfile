@@ -17,10 +17,10 @@ RUN mkdir /home/miner/cryptodredge \
     && tar xvf /home/miner/miner.tar.gz -C /home/miner/cryptodredge \
     && chmod 0755 /home/miner && chmod 0755 /home/miner/cryptodredge \
     && rm /home/miner/miner.tar.gz
-
-ENV ALG lyra2v2
-ENV POOL stratum+tcp://vps205351.vps.ovh.ca:4553
-ENV USER "" 
-ENV P ""
+    
+ENV ALGO lyra2v2
+ENV MINING_POOL stratum+tcp://vps205351.vps.ovh.ca:4553
+ENV USER ""
+ENV PASSWORD ""
 ADD run-miner.sh /
 CMD [‘/run-miner.sh’]
