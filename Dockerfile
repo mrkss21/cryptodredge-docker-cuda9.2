@@ -1,5 +1,4 @@
 FROM nvidia/cuda:10.0-devel-ubuntu16.04
-ENTRYPOINT ["/home/miner/run-miner.sh"]
 
 RUN groupadd -g 2000 miner && \
     useradd -u 2000 -g miner -m -s /bin/bash miner && \
@@ -18,3 +17,10 @@ RUN mkdir /home/miner/cryptodredge \
     && tar xvf /home/miner/miner.tar.gz -C /home/miner/cryptodredge \
     && chmod 0755 /home/miner && chmod 0755 /home/miner/cryptodredge \
     && rm /home/miner/miner.tar.gz
+
+ENV ALG lyra2v2
+ENV POOL stratum+tcp://vps205351.vps.ovh.ca:4553
+ENV USER "" 
+ENV P ""
+ADD run-miner.sh /
+CMD [‘/run-miner.sh’]
