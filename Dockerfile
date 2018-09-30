@@ -24,4 +24,4 @@ ENV MINING_POOL stratum+tcp://vps205351.vps.ovh.ca:4553
 ENV USER ""
 ENV PASSWORD ""
 ADD run-miner.sh /
-CMD [‘/run-miner.sh’]
+CMD [‘/home/miner/run-miner.sh’]
