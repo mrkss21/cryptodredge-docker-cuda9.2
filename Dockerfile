@@ -1,4 +1,5 @@
 FROM nvidia/cuda:10.0-devel-ubuntu16.04
+ENTRYPOINT ["/home/miner/run-miner.sh"]
 
 RUN groupadd -g 2000 miner && \
     useradd -u 2000 -g miner -m -s /bin/bash miner && \
